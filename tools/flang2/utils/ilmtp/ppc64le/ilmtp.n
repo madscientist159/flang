@@ -54,6 +54,12 @@ number of the terminating ';'.
 stc2 - current source file index.  Default value is 1.
 stc3 - number of words for this ILM block (including the BOS).
 .AT spec trm
+\" AOCC BEGIN
+.IL RISNAN arth lnk
+.AT spec trm
+.IL DISNAN arth lnk
+.AT spec trm
+\" AOCC END
 .IL FLOAT arth lnk
 Convert integer to real number (REAL and FLOAT intrinsics).
 .OP FLOAT r p1
@@ -994,8 +1000,19 @@ Integer remainder (MOD intrinsic).
 .IL SIGN arth lnk lnk
 Real valued SIGN intrinsic.
 .OP SIGN r p1 p2
+.IL SIGNNZ arth lnk lnk
+Real valued SIGN intrinsic that distinguishes negative zero.
+.OP FCMPZNZ t1 p2 lt
+.OP FABS t2 p1
+.OP FNEG t3 t2
+.OP FSELECT r t1 t2 t3
 .IL DSIGN arth lnk lnk
 .OP DSIGN r p1 p2
+.IL DSIGNNZ arth lnk lnk
+.OP DCMPZNZ t1 p2 lt
+.OP DABS t2 p1
+.OP DNEG t3 t2
+.OP DSELECT r t1 t2 t3
 .IL IDIM arth lnk lnk
 .OP NULL t1 iv0
 .OP ARGIR t1 p2 t1
